@@ -34,8 +34,7 @@
                     Solight</span></a>
             <a href="./contatos.php" title="Faça contato com a Empereza."><i class="fas fa-fw fa-mail-bulk"></i><span>Faça
                     Contato</span></a>
-            <a href="./privacidade.php" title="Sobre sua privacidade."><i class="fas fa-fw fa-unlock-alt"></i><span>Sua
-                    Privacidade</span></a>
+            <a href="./privacidade.php" title="Sobre sua privacidade."><i class="fas fa-fw fa-unlock-alt"></i><span>Privacidade</span></a>
         </div>
 
     </div>
