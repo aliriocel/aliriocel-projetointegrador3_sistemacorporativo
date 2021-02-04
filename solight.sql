@@ -45,22 +45,24 @@ CREATE TABLE config (
 INSERT INTO config (variable, value) VALUES 
 ('siteName', 'Solight'),
 ('siteSlogan', 'Energia Para Todos'),
-('siteLogo', '/img/logo03.png'),
+('siteLogo', './img/logo01.png'),
 ('pageTitle', ''),
 ('pageCSS', ''),
 ('pageJS', ''),
-('facebook', 'https://facebok.com/empereza'),
-('youtube', 'https://youtube.com/empereza'),
-('twitter', 'https://twitter.com/empereza'),
-('instagram', 'https://instagram.com/empereza');
+('facebook', 'https://facebok.com/solight'),
+('youtube', 'https://youtube.com/solight'),
+('twitter', 'https://twitter.com/solight'),
+('instagram', 'https://instagram.com/solight'),
+('copyright', '&copy; Copyright 2021 Alirio B. Celestino');
 
-INSERT INTO authors (aut_avatar, aut_name, aut_link) VALUES
-('https://randomuser.me/api/portraits/lego/5.jpg', 'Alirio B. Celestino', 'http://luferat.net/'),
-('https://randomuser.me/api/portraits/lego/7.jpg', 'Joca da Silva', 'http://catcocomum.tk/'),
-('https://randomuser.me/api/portraits/women/56.jpg', 'Setembrina Trocatapas', 'http://catcocomum.tk/');
+INSERT INTO authors (aut_id, aut_avatar, aut_name, aut_link) VALUES
+('1', 'https://randomuser.me/api/portraits/lego/5.jpg', 'Alirio B. Celestino', 'http://luferat.net/'),
+('2', 'https://randomuser.me/api/portraits/lego/7.jpg', 'Joca da Silva', 'http://catcocomum.tk/'),
+('3', 'https://randomuser.me/api/portraits/women/56.jpg', 'Setembrina Trocatapas', 'http://catcocomum.tk/');
 
-INSERT INTO content (cont_image, cont_title, cont_preview, cont_text, cont_author) VALUES
+INSERT INTO content (cont_date, cont_image, cont_title, cont_preview, cont_text, cont_author) VALUES
 (
+    '2021-02-01 17:35:18',
     'https://picsum.photos/200',
     'Primeiro Artigo',
     'Este é nosso primeiro artigo do site....',
@@ -75,6 +77,7 @@ INSERT INTO content (cont_image, cont_title, cont_preview, cont_text, cont_autho
     '1'
 ),
 (
+    '2021-02-02 19:50:48',
     'https://picsum.photos/201',
     'Reunião Geral de Páscoa',
     'Assista à gravação da nossa primeira reunão empresarial do segundo semestre.',
@@ -90,6 +93,7 @@ INSERT INTO content (cont_image, cont_title, cont_preview, cont_text, cont_autho
     '3'
 ),
 (
+    '2021-01-28 11:20:19',
     'https://picsum.photos/199',
     'Como usar a máscara de forma correta',
     'Veja as formas corretas de usar, manipular, descartar e reciclar suas máscaras.',
@@ -104,3 +108,21 @@ INSERT INTO content (cont_image, cont_title, cont_preview, cont_text, cont_autho
       provident, minus omnis perferendis dolorem!</p>',
     '2'
 );
+
+INSERT INTO content (cont_date, cont_image, cont_title, cont_preview, cont_text, cont_author) VALUES
+(
+    '2021-02-03 19:44:01',
+    'https://picsum.photos/198',
+    'Como o PHP ajudou a curar minha pressão',
+    'O PHP é uma das linguagens mais utilizadas no mundo e pode te salvar de um suicídio ou te matar.',
+    '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi hic, error tenetur
+     obcaecati sapiente earum ab rem quod magnam, voluptatum laudantium praesentium! Repudiandae 
+     nostrum ad obcaecati dolores nulla delectus nemo!</p><p>Lorem ipsum dolor, sit amet consectetur
+      adipisicing elit. Ea veniam odit consectetur nulla nisi quisquam blanditiis quis expedita, a 
+      quod deserunt ullam eligendi illo similique aliquid provident, ipsum dicta ipsam?</p><p>
+      <img src="https://picsum.photos/400/300" alt="Imagem aleatória"></p><p><a href="http://luferat.net/">
+      Site do fessô</a></p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos harum, laudantium 
+      nesciunt id explicabo quia. Quidem non obcaecati placeat necessitatibus tempora. Autem quam earum labore 
+      provident, minus omnis perferendis dolorem!</p>',
+    '2'
+)

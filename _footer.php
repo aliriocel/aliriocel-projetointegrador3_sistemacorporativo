@@ -6,7 +6,7 @@
 
         <a href="/" title="Ir para a página inicial."><i class="fas fa-fw fa-home"></i></a>
         <div>
-            &copy; Copyright 2021 Alirio B. Celestino
+            <?php echo $_C['copyright'] ?>
             <small>Todos os direitos reservados</small>
         </div>
         <a href="#top" title="ir para o topo desta página."><i class="fas fa-fw fa-arrow-alt-circle-up"></i></a>
@@ -17,14 +17,31 @@
 
         <!-- Menu de redes sociais -->
         <div class="social">
-            <a href="https://facebok.com/solight" target="_blank" title="Solight no Facebook."><i
+        
+        <?php
+
+            // Links das redes sociais
+            $socials = array('facebook', 'youtube', 'twitter', 'instagram');
+            $socialLinks = '';
+            foreach($socials as $link) {
+                if (isset($_C[$link])) {
+                    $socialName = ucfirst($link);
+                    $socialLinks .= "<a href=\"{$_C[$link]}\" target=\"_blank\" title=\"{$_C['SITENAME']} no {$socialName}.\">
+                    <i class=\"fab fa-fw fa-{$link}-square\"></i>
+                    <span>{$socialName}</span></a>\n";
+                }
+            }
+            echo $socialLinks;
+            ?>
+
+        <!--    <a href="https://facebok.com/solight" target="_blank" title="Solight no Facebook."><i
                     class="fab fa-fw fa-facebook-square"></i><span>Facebook</span></a>
             <a href="https://youtube.com/solight" target="_blank" title="Solight no Youtube."><i
                     class="fab fa-fw fa-youtube-square"></i><span>Youtube</span></a>
             <a href="https://twitter.com/solight" target="_blank" title="Solight no Twitter."><i
                     class="fab fa-fw fa-twitter-square"></i><span>Twitter</span></a>
             <a href="https://instagram.com/solight" target="_blank" title="Solight no Instagram."><i
-                    class="fab fa-fw fa-instagram-square"></i><span>Instagram</span></a>
+                    class="fab fa-fw fa-instagram-square"></i><span>Instagram</span></a> -->
         </div>
 
         <!-- Menu de acesso rápido -->

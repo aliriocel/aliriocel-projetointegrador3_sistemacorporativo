@@ -49,7 +49,7 @@ if ($_C['JS'] == '') {
     <div class="wrap">
 
         <header>
-            <a href="./" title="Solight - Página inicial"><img src="./img/logo01.png" alt="Solight - Intranet"></a>
+            <a href="./" title="<?php echo $_C['SITENAME'] ?> - Página inicial"><img src="./img/logo01.png" alt="Solight - Intranet"></a>
             <h1> <?php echo $_C['SITENAME'] ?> <small> <?php echo $_C['SITESLOGAN'] ?></small></h1>
         </header>
 
