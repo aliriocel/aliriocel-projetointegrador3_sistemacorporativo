@@ -87,5 +87,5 @@ function acceptCookies() {
 
 // Saber mais sobre os cookies
 function aboutCookies() {
-    location.href = '/cookies.php';
+    location.href = './cookies.php';
 }

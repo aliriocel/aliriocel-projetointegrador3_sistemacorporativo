@@ -17,41 +17,33 @@
 
         <!-- Menu de redes sociais -->
         <div class="social">
-        
-        <?php
-
-            // Links das redes sociais
+            <?php
+ 
+            // Links das redes sociais gerados dinamicamente
             $socials = array('facebook', 'youtube', 'twitter', 'instagram');
             $socialLinks = '';
             foreach($socials as $link) {
                 if (isset($_C[$link])) {
-                    $socialName = ucfirst($link);
-                    $socialLinks .= "<a href=\"{$_C[$link]}\" target=\"_blank\" title=\"{$_C['SITENAME']} no {$socialName}.\">
-                    <i class=\"fab fa-fw fa-{$link}-square\"></i>
-                    <span>{$socialName}</span></a>\n";
+                    $socialName = ucfirst($link); // facebook --> Facebook
+                    $socialLinks .= <<<LINK
+<a href="{$_C[$link]}" target="_blank" title="{$_C['siteName']} no {$socialName}.">
+    <i class="fab fa-fw fa-{$link}-square"></i>
+    <span>{$socialName}</span>
+</a>
+
+LINK;
                 }
             }
             echo $socialLinks;
             ?>
-
-        <!--    <a href="https://facebok.com/solight" target="_blank" title="Solight no Facebook."><i
-                    class="fab fa-fw fa-facebook-square"></i><span>Facebook</span></a>
-            <a href="https://youtube.com/solight" target="_blank" title="Solight no Youtube."><i
-                    class="fab fa-fw fa-youtube-square"></i><span>Youtube</span></a>
-            <a href="https://twitter.com/solight" target="_blank" title="Solight no Twitter."><i
-                    class="fab fa-fw fa-twitter-square"></i><span>Twitter</span></a>
-            <a href="https://instagram.com/solight" target="_blank" title="Solight no Instagram."><i
-                    class="fab fa-fw fa-instagram-square"></i><span>Instagram</span></a> -->
         </div>
 
         <!-- Menu de acesso rápido -->
         <div class="tools">
-            <a href="./sobre_site.php" title="Sobre este site."><i class="fas fa-fw fa-globe"></i><span>O Site</span></a>
-            <a href="./sobre.php" title="Sobre o Empereza."><i class="fas fa-fw fa-building"></i><span>A
-                    Solight</span></a>
-            <a href="./contatos.php" title="Faça contato com a Empereza."><i class="fas fa-fw fa-mail-bulk"></i><span>Faça
-                    Contato</span></a>
-            <a href="./privacidade.php" title="Sobre sua privacidade."><i class="fas fa-fw fa-unlock-alt"></i><span>Privacidade</span></a>
+            <a href="./sobre.php?id=1" title="Sobre o <?php echo $_C['siteName'] ?>."><i class="fas fa-fw fa-building"></i><span>Sobre agente</span></a>
+            <a href="./sobre.php?id=2" title="Sobre este site."><i class="fas fa-fw fa-globe"></i><span>Sobre o Site</span></a>
+            <a href="./contatos.php" title="Faça contato com a Solight."><i class="fas fa-fw fa-mail-bulk"></i><span>Faça Contato</span></a>
+            <a href="./sobre.php?id=3" title="Sobre sua privacidade."><i class="fas fa-fw fa-unlock-alt"></i><span>Sua Privacidade</span></a>
         </div>
 
     </div>
@@ -64,20 +56,20 @@
 
 <div id="cookie-wrap">
 
-<div id="cookie-msg">
+    <div id="cookie-msg">
 
-    <div id="cookie-text">
-        Usamos <strong>Cookies</strong> para que você tenha uma melhor experiência de navegação, mas,
-        nenhuma informação sigilosa sobre você é armazenada.
-    </div>
-    <div id="cookie-buttons">
-        <span id="countDown"></span>
-        &rarr;
-        <button id="cookie-acceps">Aceitar</button>
-        <button id="cookie-more">Saber mais</button>
-    </div>
+        <div id="cookie-text">
+            Usamos <strong>Cookies</strong> para que você tenha uma melhor experiência de navegação, mas,
+            nenhuma informação sigilosa sobre você é armazenada.
+        </div>
+        <div id="cookie-buttons">
+            <span id="countDown"></span>
+            &rarr;
+            <button id="cookie-acceps">Aceitar</button>
+            <button id="cookie-more">Saber mais</button>
+        </div>
 
-</div>
+    </div>
 
 </div>
 

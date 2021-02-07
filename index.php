@@ -3,46 +3,41 @@
 // Configuração global do site
 require('./_config.php');
 
-// Configurações desta página
+/***** Configurações desta página *****/
 
-// Título da Página
-$_C['TITLE'] = '';
+// Título da página
+$_C['pageTitle'] = '';
 
 // CSS desta página
-
-$_C['CSS'] = './index.css';
+$_C['pageCSS'] = 'index.css';
 
 // JavaScript desta página
+$_C['pageJS'] = 'index.js';
 
-$_C['JS'] = '';
-
-// Aqui entra o código PHP desta Página
+/***** Aqui entra o código PHP desta página *****/
 
 // Variável com o HTML do conteúdo
 $contHTML = '';
 
 // Obtém os artigos do banco de dados
-
-$sql = "SELECT `cont_id`, `cont_date` , `cont_image`, `cont_title`, `cont_preview` 
+$sql = "SELECT `cont_id`, `cont_image`, `cont_title`, `cont_preview` 
         FROM `content` 
         WHERE `cont_status` = 'ativo' 
         ORDER BY `cont_date` DESC";
-
 $res = $conn->query($sql);
 
-// Obter cada registro que veio do banco de dados
-
+// Obter cada tregisto que veio do DB
 while ($cont = $res->fetch_assoc()) {
 
     $contHTML .= <<<HTML
 
+<div class="artigo" data-href="./ler.php?id={$cont['cont_id']}">
 
-<div class="artigo">
-
-    <a href="/ler.php?{$cont['cont_id']}">
-         <img src="{$cont['cont_image']}" alt="{$cont['cont_title']}"></a>
+    <a href="/ler.php?id={$cont['cont_id']}">
+        <img src="{$cont['cont_image']}" alt="{$cont['cont_title']}">
+    </a>
     <div>
-        <h3><a href="/ler.php?{$cont['cont_id']}">{$cont['cont_title']}</a></h3>
+        <h3><a href="./ler.php?id={$cont['cont_id']}">{$cont['cont_title']}</a></h3>
         {$cont['cont_preview']}
     </div>
 
@@ -51,11 +46,19 @@ while ($cont = $res->fetch_assoc()) {
 HTML;
 }
 
-// Aqui termina o código PHP desta Página
+/***** Aqui termina o código PHP desta página *****/
 
 require('./_header.php');
 
 ?>
+
+<article>
+
+    <h2>Artigos Recentes</h2>
+
+    <?php echo $contHTML ?>
+
+</article>
 
 <aside>
 
@@ -63,16 +66,6 @@ require('./_header.php');
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident necessitatibus atque.</p>
 
 </aside>
-
-<article>
-
-
-    <h2>Artigos Recentes</h2>
-
-    <?php echo $contHTML ?>
-
-
-</article>
 
 <?php
 

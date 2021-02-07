@@ -1,31 +1,28 @@
 <?php
 
-// Processa título da Página
-
-if ($_C['TITLE'] == '') {
-    $page_title = "{$_C['SITENAME']} .:. {$_C['SITESLOGAN']}";
+// Processa título da página
+if ($_C['pageTitle'] == '') {
+    $page_title = "{$_C['siteName']} .:. {$_C['siteSlogan']}";
 } else {
-    $page_title = "{$_C['SITENAME']} .:. {$_C['TITLE']}";
+    $page_title = "{$_C['siteName']} .:. {$_C['pageTitle']}";
 }
 
 // Processa o link CSS da página
-
-if ($_C['CSS'] == '') {
+if ($_C['pageCSS'] == '') {
     $page_css = '';
 } else {
-    $page_css = "<link rel=\"stylesheet\" href=\"./css/{$_C['CSS']}\"/>\n\t";
+    $page_css = "<link rel=\"stylesheet\" href=\"/css/{$_C['pageCSS']}\">\n\t";
 }
 
-// Processa o javaSrcript da página
-
-if ($_C['JS'] == '') {
+// Processa o link JavaScript da página
+if ($_C['pageJS'] == '') {
     $page_js = '';
 } else {
-    $page_js = "<script src\"./js/{$_C['JS']}\"></script>\n";
+    $page_js = "<script src=\"/js/{$_C['pageJS']}\"></script>\n";
 }
 
-
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -35,9 +32,8 @@ if ($_C['JS'] == '') {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Grandstander&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="./logo02.ico" type="image/x-icon">
-    <?php echo $page_css ?>
-    <title><?php echo $page_title ?></title>
+    <link rel="shortcut icon" href="./img/logo01.png">
+    <?php echo $page_css ?><title><?php echo $page_title ?></title>
 </head>
 
 <body>
@@ -49,8 +45,8 @@ if ($_C['JS'] == '') {
     <div class="wrap">
 
         <header>
-            <a href="./" title="<?php echo $_C['SITENAME'] ?> - Página inicial"><img src="./img/logo01.png" alt="Solight - Intranet"></a>
-            <h1> <?php echo $_C['SITENAME'] ?> <small> <?php echo $_C['SITESLOGAN'] ?></small></h1>
+            <a href="/" title="<?php echo $_C['siteName'] ?> - Página inicial"><img src="./img/logo01.png" alt="<?php echo $_C['siteName'] ?> - Intranet"></a>
+            <h1>Intranet <?php echo $_C['siteName'] ?><small><?php echo $_C['siteSlogan'] ?></small></h1>
         </header>
 
         <nav>
